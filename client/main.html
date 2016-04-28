@@ -54,9 +54,43 @@
   </div>
 </template>
 
+
+
+
+
+
+
+
+
 <template name="home"> 
   <div class="home_container">
     <div class="row">
+      <div class="three columns">
+        <div class="option_container">
+          <center><button class="button-primary option_create_game u-full-width">Create Game</button></center>
+          <div class="option_space"></div>
+          <center><button class="button-primary u-full-width">Join Random Game</button></center>
+          <div class="option_space"></div>
+          <center><button class="button-primary u-full-width">Button element</button></center>
+        </div>
+      </div>
+
+      <div class="six columns game_container">
+        <div class="game_header">
+          <div class="row">
+            <div class="three columns">
+              <span>Player</span>
+            </div>
+            <div class="nine columns">
+              <span>Game Type</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="game_matches_container">
+        </div>
+      </div>
+
       <div class="three columns">
         <div class="account_container">
           <div class="header">
@@ -94,35 +128,19 @@
           </div>
         </div>
       </div>
-
-      <div class="six columns game_container">
-        <div class="game_header">
-          <div class="row">
-            <div class="three columns">
-              <span>Player</span>
-            </div>
-            <div class="nine columns">
-              <span>Game Type</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="game_matches_container">
-        </div>
-      </div>
-
-      <div class="three columns">
-        <div class="option_container">
-          <center><button class="button-primary option_create_game u-full-width">Create Game</button></center>
-          <div class="option_space"></div>
-          <center><button class="button-primary u-full-width">Join Random Game</button></center>
-          <div class="option_space"></div>
-          <center><button class="button-primary u-full-width">Button element</button></center>
-        </div>
-      </div>
     </div>
   </div>
 </template>
+
+
+
+
+
+
+
+
+
+
 
 <template name="createGame"> 
   <div class="u-center-vertically u-30">
@@ -174,6 +192,63 @@
       <div class="cg_size row">
         <button class="button-primary make_game six columns">Create Game</button>
         <button class="button-primary return_home six columns">Return Home</button>
+      </div>
+    </div>
+  </div>
+</template>
+
+
+
+
+
+
+
+
+  <div class="home_container">
+    <div class="row u-full-height">
+      <div class="eight columns game_container u-full-height">
+        <div class="game_header">
+          <div class="row"> <!-- Put actually tabs -->
+            <div class="four columns">
+              <span>Player Name</span>
+            </div>
+            <div class="two columns">
+              <span>Color</span>
+            </div>
+            <div class="two columns">
+              <span>score</span>
+            </div>
+            <div class="two columns">
+              <span>ping</span>
+            </div>
+            <div class="two columns">
+              <span>ready?</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="game_matches_container">
+        </div>
+      </div>
+
+      <div class="four columns">
+        <div class="chat_container">
+          <div class="header">
+            <span> Chat </span>
+            <svg class="chat_icon_circle_up u-pull-right">
+              <use id="icon_up" xlink:href="#icon-circle-up"></use>
+            </svg>
+            <svg class="chat_icon_circle_down u-pull-right">
+              <use id="icon_down" xlink:href="#icon-circle-down"></use>
+            </svg>
+          </div>
+
+          <div class="body">
+            <p>John Doe</p>
+            <p>Friends online: 0</p>
+            <p>Current Games: 0</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

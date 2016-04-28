@@ -30,7 +30,7 @@ Router.route('/', function() {
     // render the Home template with a custom data context
     this.render('platform');
     // currentView.set("home");
-    currentView.set("createGame");
+    currentView.set("lobby");
 
 });
 
@@ -46,9 +46,9 @@ Template.platform.onRendered( function() {
 	 * Will keep Body container the height of the winow
 	 * NOTE: Could be combined with header window resize function
 	 */
-	$('.container').css('height', $(window).height()-39);
+	$('.container').css('height', $(window).height()-59);
 	$(window).resize(function(evt) {
-		$('.container').css('height', $(window).height()-39);
+		$('.container').css('height', $(window).height()-59);
 	});
 });
 
