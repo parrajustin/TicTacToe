@@ -1,25 +1,180 @@
 <head>
-  <title>simple</title>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Massive Triple T</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet/less" href="css/master.less">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <symbol id="icon-circle-up" viewBox="0 0 16 16">
+        <title>circle-up</title>
+        <path class="path1" d="M0 8c0 4.418 3.582 8 8 8s8-3.582 8-8-3.582-8-8-8-8 3.582-8 8zM14.5 8c0 3.59-2.91 6.5-6.5 6.5s-6.5-2.91-6.5-6.5 2.91-6.5 6.5-6.5 6.5 2.91 6.5 6.5z"></path>
+        <path class="path2" d="M11.043 10.457l1.414-1.414-4.457-4.457-4.457 4.457 1.414 1.414 3.043-3.043z"></path>
+      </symbol>
+      <symbol id="icon-circle-down" viewBox="0 0 16 16">
+        <title>circle-down</title>
+        <path class="path1" d="M16 8c0-4.418-3.582-8-8-8s-8 3.582-8 8 3.582 8 8 8 8-3.582 8-8zM1.5 8c0-3.59 2.91-6.5 6.5-6.5s6.5 2.91 6.5 6.5-2.91 6.5-6.5 6.5-6.5-2.91-6.5-6.5z"></path>
+        <path class="path2" d="M4.957 5.543l-1.414 1.414 4.457 4.457 4.457-4.457-1.414-1.414-3.043 3.043z"></path>
+      </symbol>
+    </defs>
+  </svg>
+
 </head>
-
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
-  {{> info}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+
+<template name="platform">
+  {{> header }}
+
+  <div class="container">
+    {{> Template.dynamic template=whichView}}
+  </div>
 </template>
 
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com">Discussions</a></li>
-  </ul>
+<template name="home"> 
+  <div class="home_container">
+    <div class="row">
+      <div class="three columns">
+        <div class="account_container">
+          <div class="header">
+            <span> Account </span>
+            <svg class="acc_icon_circle_up u-pull-right">
+              <use id="icon_up" xlink:href="#icon-circle-up"></use>
+            </svg>
+            <svg class="acc_icon_circle_down u-pull-right">
+              <use id="icon_down" xlink:href="#icon-circle-down"></use>
+            </svg>
+          </div>
+
+          <div class="body">
+            <p>John Doe</p>
+            <p>Friends online: 0</p>
+            <p>Current Games: 0</p>
+          </div>
+        </div>
+
+        <div class="chat_container">
+          <div class="header">
+            <span> Chat </span>
+            <svg class="chat_icon_circle_up u-pull-right">
+              <use id="icon_up" xlink:href="#icon-circle-up"></use>
+            </svg>
+            <svg class="chat_icon_circle_down u-pull-right">
+              <use id="icon_down" xlink:href="#icon-circle-down"></use>
+            </svg>
+          </div>
+
+          <div class="body">
+            <p>John Doe</p>
+            <p>Friends online: 0</p>
+            <p>Current Games: 0</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="six columns game_container">
+        <div class="game_header">
+          <div class="row">
+            <div class="three columns">
+              <span>Player</span>
+            </div>
+            <div class="nine columns">
+              <span>Game Type</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="game_matches_container">
+        </div>
+      </div>
+
+      <div class="three columns">
+        <div class="option_container">
+          <center><button class="button-primary option_create_game u-full-width">Create Game</button></center>
+          <div class="option_space"></div>
+          <center><button class="button-primary u-full-width">Join Random Game</button></center>
+          <div class="option_space"></div>
+          <center><button class="button-primary u-full-width">Button element</button></center>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="createGame"> 
+  <div class="u-center-vertically u-30">
+    <div class="create_game_header">
+      <center><h1>Create Game</h1></center>
+      <center><div class="header_bottom_bar"></div></center>
+    </div>
+
+    <center><input class="create_game_nick" type="email" placeholder="nick name, optional, no spaces"></center>
+    <div class="cg_container">
+      <div class="cg_size row"> <!-- Game Type option -->
+        <div class="u-full-height three columns">
+          <span><h6>Game Type: </h6></span>
+        </div>
+        <div class="nine columns">
+          <select class="u-full-width" id="exampleRecipientInput">
+            <option value="Option 1">Normal</option>
+            <option value="Option 2">Massive</option>
+            <option value="Option 3">Quantum</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="cg_size row"> <!-- viasual assistance option -->
+        <div class="u-full-height three columns">
+          <span><h6>Allow Visual Assistance: </h6></span>
+        </div>
+        <div class="nine columns">
+          <select class="u-full-width" id="exampleRecipientInput">
+            <option value="Option 1">True</option>
+            <option value="Option 2">False</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="cg_size row"> <!-- Timed mode option -->
+        <div class="u-full-height three columns">
+          <span><h6>Time limit: </h6></span>
+        </div>
+        <div class="nine columns">
+          <select class="u-full-width" id="exampleRecipientInput">
+            <option value="Option 1">True</option>
+            <option value="Option 2">False</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div class="cg_size row">
+        <button class="button-primary make_game six columns">Create Game</button>
+        <button class="button-primary return_home six columns">Return Home</button>
+      </div>
+    </div>
+  </div>
 </template>
