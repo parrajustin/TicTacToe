@@ -74,6 +74,10 @@ Template.platform.onRendered( function() {
 //                      |___/  //
 /////////////////////////////////
 Template.lobby.onRendered( function() {
+
+	/*
+	Create the custom scrollbar
+	 */
 	$(document).ready(function() {
 		$(".body").customScrollbar({
 			skin: "gray-skin",
@@ -138,7 +142,7 @@ Template.home.events({
 	/**
 	 * Account panel Events
 	 */
-	'click .acc_icon_circle_up' : function() {
+	'click .acc_icon_circle_up' : function() { //Hides account panel
 		if( isOpenPanel[0] ) {
 			isOpenPanel = {0:false,1:isOpenPanel[1]};
 			$('.account_container .acc_icon_circle_up').css('visibility', 'hidden');
@@ -149,7 +153,7 @@ Template.home.events({
 			});
 		}
 	},
-	'click .acc_icon_circle_down' : function() {
+	'click .acc_icon_circle_down' : function() { //opens account panel
 		if( isOpenPanel[0] ) {
 			isOpenPanel = {0:false,1:isOpenPanel[1]};
 			$('.account_container .acc_icon_circle_down').css('visibility', 'hidden');
@@ -160,7 +164,7 @@ Template.home.events({
 			});
 		}
 	},
-	'click .chat_icon_circle_up' : function() {
+	'click .chat_icon_circle_up' : function() { //hides chat panel
 		if( isOpenPanel[1] ) {
 			isOpenPanel = {0:isOpenPanel[0],1:false};
 			$('.chat_container .chat_icon_circle_up').css('visibility', 'hidden');
@@ -172,7 +176,7 @@ Template.home.events({
 			});
 		}
 	},
-	'click .chat_icon_circle_down' : function() {
+	'click .chat_icon_circle_down' : function() { //open chat panel
 		if( isOpenPanel[1] ) {
 			isOpenPanel = {0:isOpenPanel[0],1:false};
 			$('.chat_container .chat_icon_circle_down').css('visibility', 'hidden');
@@ -188,8 +192,7 @@ Template.home.events({
 	/**
 	 * Option Panel Events
 	 */
-	'click .option_container .option_create_game' : function() {
-		console.log("worked");
+	'click .option_container .option_create_game' : function() { //goes to create game screen
 		currentView.set("createGame");
 	}
 });

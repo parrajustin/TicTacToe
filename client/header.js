@@ -35,6 +35,14 @@ Template.header.onRendered( function() {
 
 Template.header.events({
 	/**
+	 * Handels the event for clicking the shortcut inside the navigation pullout
+	 * @return {[type]} [description]
+	 */
+	'click .nav_shortcuts': function () {
+
+	},
+
+	/**
 	 * When navigation extender has been clicked
 	 * Main purpose is to operate the navigation option animation
 	 */
