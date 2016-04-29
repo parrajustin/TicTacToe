@@ -4,6 +4,7 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import './main.html';
 import './header.html';
 import './header.js';
+import './jquery.custom-scrollbar.min.js';
 
 //
 //reactive Variable
@@ -51,6 +52,68 @@ Template.platform.onRendered( function() {
 		$('.container').css('height', $(window).height()-59);
 	});
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////////
+//  _       _     _            //
+// | | ___ | |__ | |__  _   _  //
+// | |/ _ \| '_ \| '_ \| | | | //
+// | | (_) | |_) | |_) | |_| | //
+// |_|\___/|_.__/|_.__/ \__, | //
+//                      |___/  //
+/////////////////////////////////
+Template.lobby.onRendered( function() {
+	$(document).ready(function() {
+		$(".body").customScrollbar({
+			skin: "gray-skin",
+			updateOnWindowResize: true
+		});
+	});
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

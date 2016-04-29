@@ -204,6 +204,7 @@
 
 
 
+<template name="lobby"> 
   <div class="home_container">
     <div class="row u-full-height">
       <div class="eight columns game_container u-full-height">
@@ -231,7 +232,7 @@
         </div>
       </div>
 
-      <div class="four columns">
+      <div class="four columns u-full-height">
         <div class="chat_container">
           <div class="header">
             <span> Chat </span>
@@ -243,12 +244,42 @@
             </svg>
           </div>
 
-          <div class="body">
-            <p>John Doe</p>
-            <p>Friends online: 0</p>
-            <p>Current Games: 0</p>
+          <div class="body"> 
+            <div class="msg_container">
+              <div class="msg_header">
+                <span>ABC ABC ABC ABC</span>
+              </div>
+              <div class="msg_body">
+                <span>Hey you hey you there hey you there hey hey you there lol.</span>
+              </div>
+            </div>
+
+            <div class="msg_spacer"></div>
+
+            <div class="msg_container">
+              <div class="msg_header">
+                <span>ABC ABC ABC ABC</span>
+              </div>
+              <div class="msg_body">
+                <span>Hey you hey you there hey you there hey hey you there lol.</span>
+              </div>
+            </div>
+          </div>
+
+          <input class="msg_input" type="email" placeholder="Message">
+
+          <div class="enter_button">
+            <center>Enter</center>
           </div>
         </div>
+
+        <div class="option_container">
+          <center><button class="button-primary option_create_game u-full-width">Return Home</button></center>
+          <div class="option_space"></div>
+          <center><button class="button-primary u-full-width">Open Settings</button></center>
+          <div class="option_space"></div>
+          <center><button class="button-primary u-full-width">Admin Settings</button></center>
+        </div> 
       </div>
     </div>
   </div>
