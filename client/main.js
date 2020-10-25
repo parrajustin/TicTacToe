@@ -16,7 +16,7 @@ import './jquery.custom-scrollbar.min.js';
 //  userName    :    The username of this user
 //  options     :    the options you set inside the settings for peoples colors and such
 //  bufferSquare:    The variable that keeps track of where you have last clicked but haven't submited the move
-var currentView = new ReactiveVar(undefined);
+const currentView = new ReactiveVar(undefined);
 var gameID = new ReactiveVar(undefined);
 var playerID = new ReactiveVar(undefined);
 var token = new ReactiveVar(undefined);
@@ -170,6 +170,7 @@ Template.home.events({
 			$('.chat_container .chat_icon_circle_up').css('visibility', 'hidden');
 			$('.chat_container .chat_icon_circle_down').css('visibility', 'visible');
 			$('.chat_container .body').css('visibility', 'hidden');
+			console.log('open');
 
 			$('.chat_container').animate({height: $('.chat_container .header').height()}, 800, function() {
 				isOpenPanel = {0:isOpenPanel[0],1:true};
